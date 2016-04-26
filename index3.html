@@ -9,6 +9,45 @@
     </title>
     <script language="Javascript">
         
+        function ronnie() {
+            var colpersec = document.getElementById("colpersecond2");
+            
+            var newCollegepersecond = parseInt(colpersec.value);
+            
+            var textField = document.getElementById("textField");
+            var currentValue = parseInt(textField.value);
+            
+            var mine = document.getElementById("mine");                 //Getting value from textfield "mine"
+            var mines = parseInt(mine.value);                           //Using the value from "mine"
+            
+            if (mines > 0) {
+            
+            document.getElementById("mossa").style.display = "none";
+            
+            var multi = Math.floor((((Math.random() * 0.4) + 0.1) * 1000) / mines);
+            var counter = 0;
+            
+            if (counter == 5) {
+                clearInterval(ronnie);
+                clearInterval(handleButtonClick3);
+            }
+            else {
+                counter++;
+                setInterval(handleButtonClick3, multi);
+            }
+            }
+
+        }
+        
+        function handleButtonClick3() {                                  
+            var textField = document.getElementById("textField");        
+            var currentValue = parseInt(textField.value);                
+            
+            currentValue = currentValue + 1;
+            
+            textField.value = currentValue;
+        }
+        
         function handleButtonClick2() {
             var textField = document.getElementById("textField");
             var currentValue = parseInt(textField.value);
@@ -18,34 +57,33 @@
             textField.value = currentValue;
         }
         
-        function handleButtonClick() {
-            var textField = document.getElementById( "textField" );
-            var currentValue = parseInt(textField.value);
-            var collegepersec = document.getElementById("collegepersecond2");
-            var newCollegepersecond = parseInt(collegepersec.value);
+        function handleButtonClick() {                                   //The function "handleButtonClick"  
+            var textField = document.getElementById( "textField" );      //Getting value from textfield "textField"
+            var currentValue = parseInt(textField.value);                //Using the value from "textField"
+            var colpersec = document.getElementById("colpersecond2");    //Getting value from textfield "colpersecond2"
+            var newCollegepersecond = parseInt(colpersec.value);         //Using the value from "colpersecond2"
+            var today = new Date();
             
-            if (newCollegepersecond > 50) {
+            if (newCollegepersecond > 50) {                              //If "newCollegepersecond" 
                 currentValue = currentValue + 5;
                 textField.value = currentValue;
                 Math.round(currentValue.value);
             }
             
-            else {
-            // Add one
-            currentValue = currentValue + 1;
-
-            // Put it back with the new +1'd value
-            textField.value = currentValue;
+            else {                                                       //Else... 
+            currentValue = currentValue + 1;                             //Add more of "currentValue"
+            textField.value = currentValue;                              //Display new amount of "currentValue"
+            console.log(today);
             }
-            if (currentValue === 10) {
+            if (currentValue === 10) {                                   //If the "currentValue" is equal to right amount display "this" information
                 document.getElementById("marquee").innerHTML = "Lets begin";
             }
             
-            else if (currentValue === 100) {
+            else if (currentValue === 50) {
                 document.getElementById("marquee").innerHTML = "Is this your best?"
             }
             
-            else if (currentValue === 500) {
+            else if (currentValue === 100) {
                 document.getElementById("marquee").innerHTML = "Not even close"
             }
             
@@ -69,8 +107,8 @@
             var mines = parseInt(mine.value);                           //Using the value from "mine"
             var cost = document.getElementById("cost");                 //Getting value from textfield "cost"
             var newCost = parseInt(cost.value);                         //Using the value from "cost"
-            var collegepersec = document.getElementById("collegepersecond2");
-            var newCollegepersecond = parseInt(collegepersec.value);
+            var colpersec = document.getElementById("colpersecond2");
+            var newCollegepersecond = parseInt(colpersec.value);
             
             if (currentValue >= newCost) {                              //If C is greater than newCost
             currentValue = currentValue - newCost;                      //Pay amount of newCost
@@ -81,7 +119,7 @@
             cost.value = newCost;                                       //Change the old price with the new one
             cost.value = parseFloat(cost.value).toFixed(1);             //Round off the price up to 2 decimals
             newCollegepersecond = newCollegepersecond + 1 + " " + "per second";
-            collegepersec.value = newCollegepersecond;
+            colpersec.value = newCollegepersecond;
             
             setInterval(handleButtonClick2, 1000);                       //Start new mine
             }
@@ -112,7 +150,7 @@
 </div>
     <div class="number2">
       <p>
-          <input type="text" value=0 id="collegepersecond2" readonly/> 
+          <input type="text" value=0 id="colpersecond2" readonly/> 
     </p>  
 </div>
     <button type="button" class="knapp2" onclick="mineupgrade()"/>        
