@@ -76,7 +76,7 @@ body {
     background-color: rgba(0, 0, 0, 0); 
     text-align: center;
 }
-#colpersecond2 {
+#collegepersecond2 {
     border: none;
     font-size: 22px;
     color: white;
@@ -126,6 +126,14 @@ button:active {
 }
 button:focus {
     outline:0;
+}
+.golden {
+    background-image: url(goldenronnie.png);
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin:0 auto;
 }
 p {
     color:lime;
