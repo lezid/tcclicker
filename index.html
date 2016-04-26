@@ -7,132 +7,20 @@
     <title>
         \//\
     </title>
-    <script language="Javascript">
-        
-        function marquee() {
-            
-            setTimeout('marquee()', 60000)
-        }
-        setTimeout('marquee()', 60000);
-        
-        function handleButtonClick() {
-            var textField = document.getElementById( "textField" );
-            var currentValue = parseInt(textField.value);
-            
-            // Add one
-            currentValue = currentValue + 1;
-
-            // Put it back with the new +1'd value
-            textField.value = currentValue;
-
-            if (currentValue === 10) {
-                document.getElementById("marquee").innerHTML = "Lets begin";
-            }
-            
-            else if (currentValue === 50) {
-                document.getElementById("marquee").innerHTML = "Is this your best?"
-            }
-            
-            else if (currentValue === 100) {
-                document.getElementById("marquee").innerHTML = "Not even close"
-            }
-            
-            else if (currentValue === 1000) {
-                document.getElementById("marquee").innerHTML = "Average click's for an TC student is 19c/s"
-            }
-        }
-        
-        //setInterval( handleButtonClick, 1000 );                     // Start and loop every 1000ms
-        
-        function mineupgrade() {
-            var textField = document.getElementById("textField");       //Getting value from textfield "textField" 
-            var currentValue = parseInt(textField.value);               //Using the value from "textField"
-            var mine = document.getElementById("mine");                 //Getting value from textfield "mine"
-            var mines = parseInt(mine.value);                           //Using the value from "mine"
-            var cost = document.getElementById("cost");                 //Getting value from textfield "cost"
-            var newCost = parseInt(cost.value);                         //Using the value from "cost"
-            
-            if (currentValue >= newCost) {                              //If C is greater than newCost
-            currentValue = currentValue - newCost;                      //Pay amount of newCost
-            textField.value = currentValue;                             //Display new amount of C
-            mines = mines + 1;                                          //Add more of mines.
-            mine.value = mines;                                         //Display new mine value.
-            newCost = newCost * 1.1;                                    //Raising the price.
-            cost.value = newCost;                                       //Change the old price with the new one
-            cost.value = parseFloat(cost.value).toFixed(1);             //Round off the price up to 2 decimals
-            
-            setInterval(handleButtonClick, 10000);                       //Start new mine
-            }
-        }
-        
-       function placeimage(){
-        var t = $('<img src="goldenronnie.png" alt="image" id="' +  Math.floor(Math.random()*55)  + '" onclick="doclick(this.id);">');
-        $('#golden').append(t);
-        t.css('left', Math.floor(Math.random()*(400 - t.width())));
-        t.css('top', Math.floor(Math.random()*(250 - t.height())));
-        setTimeout(placeimage, 2000);
-    }
-
-
-        
-        (function makeDiv(){
-    var divsize = ((Math.random()*100) + 50).toFixed();
-    var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
-    $newdiv = $('<div/>').css({
-        'width':divsize+'px',
-        'height':divsize+'px',
-        'background-color': color
-    });
-    
-    var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
-    var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
-    
-    $newdiv.css({
-        'position':'absolute',
-        'left':posx+'px',
-        'top':posy+'px',
-        'display':'none'
-    }).appendTo( 'body' ).fadeIn(100).delay(300).fadeOut(200, function(){
-       $(this).remove();
-       makeDiv(); 
-    }); 
-})();
-
-    
-    </script>
 </head>
 <body>
- 
-<div class="knapp">
-<div class="hvr-bounce-in">
-    <button type="button" class="knapp" onClick="handleButtonClick()"/>
-        <img src="logo.png">
-    </button>
-</div>
-</div>
+ <div class="hello">
+<img src="logo.png">
+    </div>
+<h1>Welcome to TC clicker</h1>
 
-<div id="marqueediv">
-    <marquee direction="up" id="marquee">
-        Welcome to Teknikcollege Clicker
-    </marquee>
-</div>
-    <br>
-<div class="number2">
-    <input type="text" value="0" id="textField" readonly/>
-</div>
-    
-    <button type="button" class="knapp2" onclick="mineupgrade()"/>        
-<div class="upgradeknapp">
-        <input type="number" value=10 id="cost" readonly/>
-        <input type="text" value="0.10c/s" id="collegepersec" readonly/>
-        <input type="number" value="0" id="mine" readonly/>
-    </button>
-</div>
-
-<div class="golden">
-
-</div>
-
-
+<p>This app was created by ZiD, Ghandi and mkk for a school project</p> 
+    <h2>Instructions</h2>
+    <p>1. Click on the TC logo to get points</p>
+    <p>2. Click on the worker image to get little workers that click for you</p>
+    <p>3. A golden Ronnie can appear at random times, click on him and get a bonus</p>
+<div class="ready">
+    <a href="index3.html"><img src="Button-ImReady.png" ></a>
+    </div>
 </body>
 </html>

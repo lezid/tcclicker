@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css">
+    <meta charset="utf-8">
+    <title>
+        \//\
+    </title>
+    <script language="Javascript">
+        
+        function handleButtonClick2() {
+            var textField = document.getElementById("textField");
+            var currentValue = parseInt(textField.value);
+            
+            currentValue = currentValue + 1;
+            
+            textField.value = currentValue;
+        }
+        
+        function handleButtonClick() {
+            var textField = document.getElementById( "textField" );
+            var currentValue = parseInt(textField.value);
+            var collegepersec = document.getElementById("collegepersecond2");
+            var newCollegepersecond = parseInt(collegepersec.value);
+            
+            if (newCollegepersecond > 50) {
+                currentValue = currentValue + 5;
+                textField.value = currentValue;
+                Math.round(currentValue.value);
+            }
+            
+            else {
+            // Add one
+            currentValue = currentValue + 1;
+
+            // Put it back with the new +1'd value
+            textField.value = currentValue;
+            }
+            if (currentValue === 10) {
+                document.getElementById("marquee").innerHTML = "Lets begin";
+            }
+            
+            else if (currentValue === 100) {
+                document.getElementById("marquee").innerHTML = "Is this your best?"
+            }
+            
+            else if (currentValue === 500) {
+                document.getElementById("marquee").innerHTML = "Not even close"
+            }
+            
+            else if (currentValue === 1000) {
+                document.getElementById("marquee").innerHTML = "Average click's for an TC student is 19c/s"
+            }
+            else if (currentValue === 5000) {
+                document.getElementById("marquee").innerHTML = "noob"
+            }
+            else if (currentValue === 10000) {
+                document.getElementById("marquee").innerHTML = "cyka"
+            }
+        }
+        
+        //setInterval( handleButtonClick, 1000 );                     // Start and loop every 1000ms
+        
+        function mineupgrade() {
+            var textField = document.getElementById("textField");       //Getting value from textfield "textField" 
+            var currentValue = parseInt(textField.value);               //Using the value from "textField"
+            var mine = document.getElementById("mine");                 //Getting value from textfield "mine"
+            var mines = parseInt(mine.value);                           //Using the value from "mine"
+            var cost = document.getElementById("cost");                 //Getting value from textfield "cost"
+            var newCost = parseInt(cost.value);                         //Using the value from "cost"
+            var collegepersec = document.getElementById("collegepersecond2");
+            var newCollegepersecond = parseInt(collegepersec.value);
+            
+            if (currentValue >= newCost) {                              //If C is greater than newCost
+            currentValue = currentValue - newCost;                      //Pay amount of newCost
+            textField.value = currentValue;                             //Display new amount of C
+            mines = mines + 1;                                          //Add more of mines.
+            mine.value = mines;                                         //Display new mine value.
+            newCost = newCost * 1.5;                                    //Raising the price.
+            cost.value = newCost;                                       //Change the old price with the new one
+            cost.value = parseFloat(cost.value).toFixed(1);             //Round off the price up to 2 decimals
+            newCollegepersecond = newCollegepersecond + 1 + " " + "per second";
+            collegepersec.value = newCollegepersecond;
+            
+            setInterval(handleButtonClick2, 1000);                       //Start new mine
+            }
+        }
+    </script>
+       
+    <script src="jquery.js"></script>
+   
+</head>
+<body>
+ 
+<div class="knapp">
+<div class="hvr-bounce-in">
+    <button type="button" class="knapp" onClick="handleButtonClick()"/>
+        <img src="logo.png">
+    </button>
+</div>
+</div>
+
+<div id="marqueediv">
+    <marquee direction="up" id="marquee">
+        Welcome to Teknikcollege Clicker
+    </marquee>
+</div>
+    <br>
+<div class="number2">
+    <input type="text" value="0" id="textField" readonly/>
+</div>
+    <div class="number2">
+      <p>
+          <input type="text" value=0 id="collegepersecond2" readonly/> 
+    </p>  
+</div>
+    <button type="button" class="knapp2" onclick="mineupgrade()"/>        
+<div class="upgradeknapp">
+        <input type="number" value=10 id="cost" readonly/>
+        <input type="text" value="1c/s" id="collegepersec" readonly/>
+        <input type="number" value="0" id="mine" readonly/>
+    </button>
+</div>
+
+
+
+
+</body>
+</html>
