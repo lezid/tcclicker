@@ -8,6 +8,9 @@
         \//\
     </title>
     <script language="Javascript">
+       setTimeout(function(){
+document.getElementById('mossa').style.visibility = "visible";
+},5000);
         
         function ronnie() {
             var colpersec = document.getElementById("colpersecond2");
@@ -25,15 +28,25 @@
             document.getElementById("mossa").style.display = "none";
             
             var multi = Math.floor((((Math.random() * 0.4) + 0.1) * 1000) / mines);
-            var counter = 0;
             
-            if (counter == 5) {
-                clearInterval(ronnie);
-                clearInterval(handleButtonClick3);
+                //timer som öker med 1 per sekund
+                var counter = 0;
+            var myInterval = setInterval(function ()
+            {
+            ++counter;
+            }, 1000);
+
+
+
+                
+            //om timern är över 5 
+            if (counter > 5) {
+                return;
+               
             }
             else {
-                counter++;
                 setInterval(handleButtonClick3, multi);
+                
             }
             }
 
@@ -160,7 +173,7 @@
         <input type="number" value="0" id="mine" readonly/>
     </button>
 </div>
-    <button type="button" id="mossa" class="knapp2" onclick="ronnie()">
+    <button type="button" id="mossa" class="knapp2" onclick="ronnie()" style="visibility:hidden;">
 <div class="golden">
     </button>
 </div>
