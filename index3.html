@@ -8,7 +8,62 @@
         \//\
     </title>
     <script language="Javascript">
+       setTimeout(function(){
+document.getElementById('mossa').style.visibility = "visible";
+},5000);
         
+<<<<<<< HEAD
+=======
+        function ronnie() {
+            var colpersec = document.getElementById("colpersecond2");
+            
+            var newCollegepersecond = parseInt(colpersec.value);
+            
+            var textField = document.getElementById("textField");
+            var currentValue = parseInt(textField.value);
+            
+            var mine = document.getElementById("mine");                 //Getting value from textfield "mine"
+            var mines = parseInt(mine.value);                           //Using the value from "mine"
+            
+            if (mines > 0) {
+            
+            document.getElementById("mossa").style.display = "none";
+            
+            var multi = Math.floor((((Math.random() * 0.4) + 0.1) * 1000) / mines);
+            
+                //timer som öker med 1 per sekund
+                var counter = 0;
+            var myInterval = setInterval(function ()
+            {
+            ++counter;
+            }, 1000);
+
+
+
+                
+            //om timern är över 5 
+            if (counter > 5) {
+                return;
+               
+            }
+            else {
+                setInterval(handleButtonClick3, multi);
+                
+            }
+            }
+
+        }
+        
+        function handleButtonClick3() {                                  
+            var textField = document.getElementById("textField");        
+            var currentValue = parseInt(textField.value);                
+            
+            currentValue = currentValue + 1;
+            
+            textField.value = currentValue;
+        }
+        
+>>>>>>> origin/master
         function handleButtonClick2() {
             var textField = document.getElementById("textField");
             var currentValue = parseInt(textField.value);
@@ -122,7 +177,11 @@
         <input type="number" value="0" id="mine" readonly/>
     </button>
 </div>
+<<<<<<< HEAD
 
+=======
+    <button type="button" id="mossa" class="knapp2" onclick="ronnie()" style="visibility:hidden;">
+>>>>>>> origin/master
 <div class="golden">
 
 </div>
