@@ -1,5 +1,5 @@
 html {
-    background-image: url(seamlesstexture3_1200.jpg);
+    background-image: url(mooning.png);
     overflow: hidden;
 }
 body {
@@ -63,23 +63,23 @@ body {
     width: auto;
     height: 2em;
     text-align: center;
-    color: #FFFFFF;
+    color:black;
     font-size: 30px;
 }
     
 #textField {
     border: none;
     font-size: 45px;
-    color: white;
+    color: black;
     width: 100%;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0); 
     text-align: center;
 }
-#colpersecond2 {
+#collegepersecond2 {
     border: none;
     font-size: 22px;
-    color: white;
+    color: black;
     width: 100%;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0); 
